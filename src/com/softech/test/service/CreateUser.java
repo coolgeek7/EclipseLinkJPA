@@ -26,12 +26,18 @@ public class CreateUser {
 //        By using entitymanager object, we can persist entities into database.
 
         User user = new User();
-        user.setId(110);
-        user.setUsername("test");
-        user.setPassword("test");
+        user.setId(1000);
+        user.setUsername("oi");
+        user.setPassword("oi");
 
         entitymanager.persist(user);
+        try{
         entitymanager.getTransaction().commit();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+         
+        }
 
         entitymanager.close();
         emfactory.close();
